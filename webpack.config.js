@@ -13,6 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js'
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname,'src'),
+    }
+  },
   module: {
     rules: [
       {
@@ -22,6 +27,17 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['env', 'react']
+          }
+        }
+      },
+      {
+        test: /\.m?jsx$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            // presets: ['env', 'react']
+            presets: ['react'],
           }
         }
       },
@@ -57,7 +73,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new ExtractTextPlugin("index.css"),
+    new ExtractTextPlugin({
+      filename: "[name].[contenthash].css",
+      disable: process.env.NODE_ENV === "development"
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'commons',
       filename: 'js/base.js'
