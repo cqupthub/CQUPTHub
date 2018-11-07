@@ -10,6 +10,7 @@
     "build": "node_modules/.bin/webpack"
   },
   "devDependencies": {
+    "antd": "^3.10.4",
     "babel-core": "6.26.3",
     "babel-loader": "7",
     "babel-preset-env": "1.7.0",

@@ -11,9 +11,9 @@ import './assets/css/app.less';
 import App from './views/app/App.jsx'
 import index from './views/index/index.jsx'
 import projects from './views/projects/projects.jsx';
-import team from './views/team/team.jsx'
-import article from './views/article/article.jsx'
-import aboutUs from './views/aboutUs/about.jsx'
+import team from './views/team/team.jsx';
+import article from './views/article/article.jsx';
+import aboutUs from './views/aboutUs/about.jsx';
 
 
 
