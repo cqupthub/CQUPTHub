@@ -3,6 +3,10 @@
  */
 
 import React from 'react';
+import './index.less';
+
+import Banner from './components/banner.jsx'
+import About from './components/about.jsx'
 
 export default class Index extends React.Component{
   constructor(props){
@@ -11,7 +15,8 @@ export default class Index extends React.Component{
   render(){
     return (
       <div className="index">
-        index
+        <Banner />
+        <About />
       </div>
     )
   }
