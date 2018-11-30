@@ -16,7 +16,6 @@ export default class Index extends React.Component{
     return (
       <div className="index">
         <Banner />
-        <About />
       </div>
     )
   }

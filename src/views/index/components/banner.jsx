@@ -7,14 +7,23 @@ import { Carousel } from 'antd';
 export default class Banner extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      imgPaths: [
+        require('../../../assets/img/通屏banner.png'),
+        require('../../../assets/img/通屏banner2jpg.jpg'),
+      ]
+    }
   }
 
   render() {
     return (
       <div className="banner">
-        <Carousel autoplay>
-          <div><img src="https://cqupthub-1252092265.cos.ap-chengdu.myqcloud.com/banner.png" alt=""/></div>
-          <div><img src="https://cqupthub-1252092265.cos.ap-chengdu.myqcloud.com/banner2.jpg" alt=""/></div>
+        <Carousel autoplay arrows>
+        {
+          this.state.imgPaths.map((val, i) => (
+            <img key={i} src={val} alt=""/>
+          ))
+        }
         </Carousel>
       </div>
     )
