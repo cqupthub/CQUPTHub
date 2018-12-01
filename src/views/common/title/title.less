@@ -1,0 +1,24 @@
+.title {
+  .title-text {
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 38%;
+      height: 1px;
+      background: grey;
+    }
+    &:before {
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+  }
+}

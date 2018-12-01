@@ -2,6 +2,8 @@
   *
   */
 import React from 'react'
+import Contact from './components/contact/contact.jsx';
+import Feedback from './components/feedback/feedback.jsx';
 
 export default class About extends React.Component {
   constructor(props){
@@ -11,7 +13,8 @@ export default class About extends React.Component {
   render() {
     return (
       <div className="about">
-        About
+        <Feedback />
+        <Contact />
       </div>
     )
   }

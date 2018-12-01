@@ -1,0 +1,36 @@
+.articles {
+  width: 1000px;
+  margin: 0 auto 40px auto;
+  padding-top: 40px;
+
+  .articles-header {
+    background-color: rgba(252, 252, 7, 0.582);
+    margin-bottom: 30px;
+    width: 124px;
+  }
+  .articles-body {
+
+    .articles-bd-item {
+      cursor: pointer;
+      display: flex;
+      color: rgba(71, 71, 71, 0.795);
+      font-weight: 500;
+      padding: 7px 0;
+        &.active{
+          color: #409b76;
+        }
+        &:hover{
+          color: #409b76;
+        }
+
+      .articles-bd-item-title {
+        flex: 0 0 60%;
+        
+      }
+      .articles-bd-item-publish {
+        flex: 0 0 40%;
+        text-align: right;
+      }
+    }
+  }
+}

@@ -9,8 +9,8 @@ export default class Banner extends React.Component {
     super(props);
     this.state = {
       imgPaths: [
-        require('../../../assets/img/通屏banner.png'),
-        require('../../../assets/img/通屏banner2jpg.jpg'),
+        require('../../../../assets/img/通屏banner.png'),
+        require('../../../../assets/img/通屏banner2jpg.jpg'),
       ]
     }
   }

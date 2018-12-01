@@ -1,0 +1,57 @@
+.articlelist {
+  width: 1000px;
+  margin: 40px auto;
+  .al-head {
+    position: relative;
+    .al-hd-title {
+      background-color: rgba(252, 252, 7, 0.582);
+      width: 70px;  
+      margin: 10px auto;
+    }
+    .al-hd-search {
+      position: absolute;
+      top: 10%;
+      right: 1.5%;
+      .al-hd-search-input {
+        outline: none;
+        background: #fff;
+        padding: 3px 5px;
+        border-right: 0;
+        border-left: 2px solid grey;
+        border-top: 2px solid grey;
+        border-bottom: 2px solid grey;
+        border-radius: 5px;
+        font-size: 16px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: .3s;
+      }
+      .al-hd-search-icon {
+        width: 28px;
+        padding-bottom: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+  .al-body {
+    margin-top: 30px;
+    .al-bd-item {
+      display: flex;
+      margin: 10px 0;
+      cursor: pointer;
+      &.active{
+        color: #409b76;
+      }
+      &:hover{
+        color: #409b76;
+      }
+      .al-bd-item-title {
+        flex: 1;
+      }
+      .al-bd-item-publish {
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
+}
