@@ -2,6 +2,7 @@
   animation: displayFromRight 1s;
   width: 1000px;
   margin: 20px auto;
+  
   .ad-head {
     display: flex;
     .ad-hd-goback {
@@ -31,6 +32,18 @@
   }
   .ad-body {
     margin-bottom: 40px;
+    position: relative;
+    .ad-totop {
+      position: absolute;
+      right: 11%;
+      top: 50%;
+      width: 25px;
+      cursor: pointer;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
     .ad-bd-author {
       text-align: center;
       font-size: 13px;

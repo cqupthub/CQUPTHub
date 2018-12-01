@@ -17,6 +17,9 @@ class ArticleDetails extends Component {
           <div className="ad-hd-right"/>
         </div>
         <div className="ad-body">
+          <div className="ad-totop">
+            <img src={require('../../../../assets/img/icon/fanhuidingduan.png')} alt=""/>
+          </div>
           <div className="ad-bd-author">{this.props.article.author}</div>
           <div className='ad-bd-content'>
             <div className="ad-bd-content-img"></div>

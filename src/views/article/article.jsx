@@ -55,7 +55,7 @@ export default class Article extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      shownArticleId: null,
+      shownArticleId: 1,
     }
   }
 
