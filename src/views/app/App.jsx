@@ -1,7 +1,3 @@
-/**
- * App.jsx
- */
-
 import React from 'react';
 import './App.less';
 import Header from '../common/header/header.jsx'
