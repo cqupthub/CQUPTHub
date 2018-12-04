@@ -10,8 +10,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js'
+    path: __dirname + '/dist/js/',
+    publicPath:'/js/',
+    filename: '[name].js',
+    chunkFilename: '[name].[chunkhash:5].chunk.js'
   },
   resolve: {
     alias: {
@@ -71,14 +73,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Code Splitting',
       template: './src/index.html'
     }),
     new ExtractTextPlugin({
-      filename: "[name].[contenthash].css",
-      disable: process.env.NODE_ENV === "development"
+      filename: "[name].[contenthash].css"
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'commons',
+      name: 'common',
       filename: 'js/base.js'
     })
   ],
