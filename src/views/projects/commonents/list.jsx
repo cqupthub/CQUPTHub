@@ -7,6 +7,12 @@ export default class ProjectList extends React.Component{
   render(){
     return (
     	<div className = "project-list">
+    		<div className ='project-tit'>
+    		    {this.props.item.projectname}
+    		</div>
+    		<div className = 'project-reduct'>
+    		    {this.props.item.projectTit}
+    		</div>
     	</div>
     )
   }

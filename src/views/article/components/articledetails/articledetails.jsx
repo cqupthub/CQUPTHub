@@ -20,15 +20,15 @@ class ArticleDetails extends Component {
           <div className="ad-totop">
             <img src={require('../../../../assets/img/icon/fanhuidingduan.png')} alt=""/>
           </div>
-          <div className="ad-bd-author">{this.props.article.author}</div>
+          <div className='ad-bd-content-jianjie'>{this.props.article.jianjie}</div>
           <div className='ad-bd-content'>
             <div className="ad-bd-content-img"></div>
-            <div className="ad-bd-content-text">{this.props.article.content}</div>
+            
+            <div className="ad-bd-content-text" dangerouslySetInnerHTML = {{__html:this.props.article.content}}></div>
           </div>
         </div>
         <div className="ad-foot">
           <div className="ad-ft-left">
-            <div className="ad-ft-left-publish">{this.props.article.publish}</div>
             <div className="ad-ft-left-info">
               <div className="ad-ft-left-info-views">
                 <img src={require('../../../../assets/img/icon/liulanliang.png')} alt=""/>

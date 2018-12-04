@@ -6,6 +6,7 @@ import './teamDetail.less'
 import MemberHeader from './components/memberHeader.jsx'
 import TeamDetailExperence from './components/teamDetailExperence.jsx'
 import TeamDetailInformation from './components/teamDetailInformation.jsx'
+import axios from 'axios'
 export default class teamDetail extends React.Component{
   constructor(props){
     super(props);
@@ -25,18 +26,43 @@ export default class teamDetail extends React.Component{
             tit:'啦啦啦啦'
         },{
             tit:'啦啦啦啦啦啦啦'
-        }]
+        }],
+        finsh:false,
     }
+  }
+  componentWillMount(){
+    this.getData()
+  }
+  getData(){
+    axios.get('http://119.23.233.196:1234/editMember?id='+ this.props.location.query.id )
+    .then((res)=>{
+        if(res.data.skill.language && res.data.skill.software){
+          res.data.skill = res.data.skill.language.concat(res.data.skill.software);
+        }
+        else{
+          res.data.skill = []; 
+        }
+        this.setState({
+          information:res.data, //获取所有
+          finsh:true,
+        })
+    })
   }
   render(){
     return (
       <div id='teamDetail' className="teamDetail">
           <main className='main-box'>
+          {
+            this.state.finsh ?
+              <div>
                 <MemberHeader name = {this.state.information.name}/>
                 <div className ='member-information-box'>
                     <TeamDetailInformation information = {this.state.information}/>
-                    <TeamDetailExperence experence = {this.state.experence}/>
+                    <TeamDetailExperence experence = {this.state.information.experience}/>
                 </div>
+              </div>
+            : ''
+          }
           </main>
       </div>
     )

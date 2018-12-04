@@ -33,6 +33,9 @@
   .ad-body {
     margin-bottom: 40px;
     position: relative;
+    .ad-bd-content-jianjie{
+      text-align:center;
+    }
     .ad-totop {
       position: absolute;
       right: 11%;
@@ -92,6 +95,44 @@
       text-align: right;
     }
   }
+  a{
+    color:#1a83d7;
+  }
+  code{
+    background-color: #f6f6f6;
+    padding:5px;
+  }
+  pre{
+    background-color:#f6f6f6;
+    padding:10px;
+    code{
+      word-break:break-all;
+      white-space: pre-wrap;
+      word-wrap:break-word; 
+      font-family:'OpenSans';
+      padding:0;
+      
+    }
+  }
+  p{
+    padding:10px 0;
+  }
+  li{
+
+    min-height:25px;
+    position:relative;
+  }
+  li:before{
+    content:'';
+    display:inline-block;
+    width:8px;
+    height:8px;
+    line-height:25px;
+    margin-right:5px;
+    border-radius:50%;
+    background-color:black;
+  }
+
 }
 
 @keyframes displayFromRight {

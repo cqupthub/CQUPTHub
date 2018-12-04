@@ -11,7 +11,7 @@ import team from './views/team/team.jsx'
 import teamDetail from './views/teamDetail/teamDetail.jsx'
 import article from './views/article/article.jsx'
 import aboutUs from './views/aboutUs/about.jsx'
-
+import pageDetail from './views/pageDetail/pageDetail.jsx'
 
 
 ReactDOM.render(
@@ -23,6 +23,7 @@ ReactDOM.render(
       <Route path="projectDetail" component = {projectDetail} />
       <Route path="team" component={team} />
       <Route path='teamDetail' component = {teamDetail} />
+      <Route path='pageDetail' component = {pageDetail} />
       <Route path="article" component={article} />
       <Route path="aboutUs" component={aboutUs} />
     </Route>

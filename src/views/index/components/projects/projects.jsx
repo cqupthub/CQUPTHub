@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import './projects.less'
-
+import { Link } from 'react-router'
 const projectsInfo = [
   {
     img: require('../../../../assets/img/bitcoin-3698463_640.jpg'),
     name: '区块链技术',
-    description: '关于研究区块链，比特币等一系列问题，比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉',
+    description: '项目1',
   },
   {
     img: require('../../../../assets/img/ball-63527_640.jpg'),
     name: '取证技术',
-    description: '关于研究区块链，比特币等一系列问题，比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉',
+    description: '项目2',
   },
   {
     img: require('../../../../assets/img/cell-3089947_640.jpg'),
     name: '生物机器学习技术',
-    description: '关于研究区块链，比特币等一系列问题，比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉比阿吉',
+    description: '项目3',
   },
 ]
 
@@ -23,7 +23,10 @@ class Projects extends Component {
   render() {
     return (
       <div className='pros'>
-        <div className='pros-header'>项目展示 Projects</div>
+        <div className='props-header-box'>
+          <div className='pros-header'>项目展示 Projects</div>
+          <Link className='toprops' to={{pathname:'/projects'}}>更多</Link>
+        </div>
         <div className="pros-body">
         {
           projectsInfo.map((val, i) => (

@@ -14,7 +14,9 @@ class ArticleList extends Component {
     const searchBar = this.refs.SearchBar
     searchBar.style.transform = 'scaleX(0)'
   }
-
+  // componentWillMount(){
+  //   console.log(this.props.articles);
+  // }
   render() {
     return (
       <div className='articlelist'>
@@ -37,7 +39,7 @@ class ArticleList extends Component {
               onClick={() => this.props.getArticleId(i)}
               key={i} className='al-bd-item'>
               <div className='al-bd-item-title'>{val.title}</div>
-              <div className='al-bd-item-publish'>{val.publish}</div>
+              <div className='al-bd-item-publish'>{val.time}</div>
             </div>
           ))
         }

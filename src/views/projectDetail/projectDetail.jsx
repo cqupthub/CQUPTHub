@@ -11,22 +11,48 @@ import keyissue from '@/assets/img/keyissue.png'
 import point from '@/assets/img/point.png'
 import ListHeader from '@/views/common/listHeader/listHeader.jsx'
 import ContentList from './commonents/contentList.jsx'
+import axios from 'axios'
+const type = [design,keyissue,point,diary];
+const name = ['架构设计','关键问题','技术要点','过程日记']
+const typeDetail = ['design','keyissue','point','process']
 export default class projectDetail extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      pageList:[
-        {src:design,title:'测试测试'},
-        {src:keyissue,title:'测试测试'},
-        {src:point,title:'测试测试'},
-        {src:diary,title:'测试测试'},
-        {src:end,title:'测试测试'},
-      ],
+      show:false,
+      projectid:this.props.location.query.projectid,
+      pageList:[],
       listContent:{
         title:'互联网项目',
         page:'PROJECT'
       },
     }
+  }
+  getData(){
+    axios.get(`http://119.23.233.196:1234/getTypeProject?Projectid=${this.state.projectid}`)
+    .then((res)=>{
+      console.log(res);
+        let i = 0;
+        let show =  [];
+        for(var index in res.data){
+          if(res.data[index].length != 0){
+              show[i] = res.data[index][0];
+              i++;
+          }
+        }
+        show.map((item,index)=>{
+          item.src = type[index]
+          item.mytype = name[index]
+        })
+         this.setState({
+          show:true,
+          pageList:show,
+         })
+    })
+
+  }
+  componentWillMount(){
+    this.getData()
   }
   render() {
     return (
@@ -34,13 +60,17 @@ export default class projectDetail extends React.Component {
           <div className = 'main-box'>
               <main className='project-box'>
                   <ListHeader data = {this.state.listContent}/>
-                  <div className='main-content'>
+                  {
+                    this.state.show?
+                      <div className='main-content'>
                         {
                           this.state.pageList.map((item, i) => (
-                             <ContentList key={i} pageList = {item}/>
+                             <ContentList type = {typeDetail[i]} key={i} pageList = {item} id = {this.state.projectid}/>
                           ))
                         }
-                  </div>
+                      </div>
+                    : ''
+                  }
               </main>
           </div>
         </div>

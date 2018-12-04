@@ -2,7 +2,14 @@
   width: 1000px;
   margin: 0 auto 40px auto;
   padding-top: 40px;
-
+  .header{
+    span{
+      display:inline-block;
+    }
+    .tit{
+      width:150px;
+    }
+  }
   .articles-header {
     background-color: rgba(252, 252, 7, 0.582);
     margin-bottom: 30px;
@@ -15,7 +22,7 @@
       display: flex;
       color: rgba(71, 71, 71, 0.795);
       font-weight: 500;
-      padding: 7px 0;
+      padding: 3px 0;
         &.active{
           color: #409b76;
         }
@@ -24,12 +31,15 @@
         }
 
       .articles-bd-item-title {
-        flex: 0 0 60%;
-        
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;   
       }
       .articles-bd-item-publish {
-        flex: 0 0 40%;
-        text-align: right;
+        display:flex;
+        
+        text-overflow:hidden;
+        text-align:left;
       }
     }
   }

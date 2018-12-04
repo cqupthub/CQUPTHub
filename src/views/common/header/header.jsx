@@ -14,11 +14,13 @@ export default class Header extends React.Component{
 
   render(){
     return (
-      <div className="header">
-        <div className="logo">
-          <img src={logo} alt=""/>
+      <div className = 'header-box' id='myheader'>
+        <div className="header">
+          <div className="logo">
+            <img src={logo} alt=""/>
+          </div>
+          <Nav />
         </div>
-        <Nav />
       </div>
     )
   }
