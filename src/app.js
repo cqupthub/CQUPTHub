@@ -115,6 +115,6 @@ ReactDOM.render(
     <Router
       history={hashHistory}
       routes={rootRouter}
-      />
+    />
   ), document.getElementById('app')
 );
