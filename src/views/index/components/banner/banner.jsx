@@ -18,13 +18,7 @@ export default class Banner extends React.Component {
   render() {
     return (
       <div className="banner">
-        <Carousel autoplay>
-        {
-          this.state.imgPaths.map((val, i) => (
-            <img key={i} src={val} alt=""/>
-          ))
-        }
-        </Carousel>
+        <img src={this.state.imgPaths[0]} alt=""/>
       </div>
     )
   }

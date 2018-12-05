@@ -5,6 +5,7 @@
 import React from 'react';
 import { Link } from 'react-router'
 import { Pagination } from 'antd';
+import Loading from '../common/loading/loading.jsx'
 import './project.less';
 import bg from '@/assets/img/bg_project.png'
 import ProjectList from './commonents/list.jsx'
@@ -30,13 +31,16 @@ export default class Projects extends React.Component{
   getData(){
     axios.get("http://119.23.233.196:1234/getProject?name=''&time=''&page=" + this.state.current)
     .then((res)=>{
+          console.log(res);
           var list = [];
           res.data.list.map((item,index)=>{
             list[index] = {};
             list[index].projectid = item.Projectid;
             list[index].projectname = item.projectName;
             list[index].projectTit = item.projectTit;
+            list[index].projectsrc = item.src;
           })
+
          this.setState({
             listLink:list,
             total:res.data.totalAll,
@@ -81,7 +85,7 @@ export default class Projects extends React.Component{
                 </main>
                 <Footer/>
               </div>
-              :''
+              :<Loading size='36'/>
             }
           </div>
       </div>

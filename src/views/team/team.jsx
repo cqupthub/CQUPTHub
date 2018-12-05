@@ -8,6 +8,7 @@ import { Link } from 'react-router'
 import ListHeader from '@/views/common/listHeader/listHeader.jsx'
 import TeamList from './components/teamlist.jsx'
 import Footer from '../common/footer/footer.jsx'
+import Loading from '../common/loading/loading.jsx'
 import TeamCaption from './components/teamCaption.jsx'
 import axios from 'axios'
 import { Pagination } from 'antd';
@@ -78,12 +79,12 @@ export default class Team extends React.Component {
                 </div>
             </main>
 
-            :''
+            :<Loading size='36'/>
           }
           {
             this.state.show == 2?
               <Footer/>
-            : ''
+            :''
           }
           
       </div>

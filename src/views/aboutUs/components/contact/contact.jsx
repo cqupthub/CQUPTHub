@@ -52,9 +52,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="contact-bd-mid" />
-          <div className="contact-bd-right">
-            <img src={require('../../../../assets/img/map.png')} alt=""/>
-          </div>
+
         </div>
       </div>
     );

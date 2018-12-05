@@ -6,15 +6,15 @@ const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: __dirname + '/dist/js/',
-    publicPath:'/js/',
-    filename: '[name].js',
-    chunkFilename: '[name].[chunkhash:5].chunk.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'static/js/bundle.js',
   },
+  devtool:false,
   resolve: {
     alias: {
       '@': path.resolve(__dirname,'src'),
@@ -64,7 +64,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'resource/[name].[ext]'
+              name: '/static/img/[name].[ext]'
             }
           }
         ]
@@ -72,16 +72,18 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Code Splitting',
       template: './src/index.html'
     }),
     new ExtractTextPlugin({
-      filename: "[name].[contenthash].css"
+      filename: "static/css/[name].[contenthash].css",
+      disable: process.env.NODE_ENV === "development"
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'js/base.js'
+      name: 'commons',
+      filename: 'static/js/base.js'
     })
   ],
   devServer: {

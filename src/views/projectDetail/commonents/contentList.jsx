@@ -16,16 +16,16 @@ export default class ContentList extends React.Component{
 	        </Link>
 	        <div className='content-page'>
 	        	<div>
+	        		文章标题
+		            <p className='mycontent'>
+		               	{this.props.pageList.title}
+		            </p>
+	        	</div>
+	        	<div>
 	        		文章简介
 		            <p className='mycontent'>
 		               	{this.props.pageList.EssayTit}
 		            </p>
-	        	</div>
-	        	<div>
-	        		文章内容
-	        		<div className = 'box'>
-	        			<Mycontent content = {this.props.pageList.content}></Mycontent>
-	        		</div>
 	        	</div>
 	        </div>
 		</div>

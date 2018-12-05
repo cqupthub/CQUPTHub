@@ -28,7 +28,7 @@ export default class Footer extends React.Component {
     return (
       <div className="footer">
         <div className="wrapper">
-          <div className="logo"><img src={logo} alt=""/></div>
+          
           <div className="links">
           {
             this.state.links.map((item, i) => (

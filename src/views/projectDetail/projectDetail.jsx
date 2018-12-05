@@ -9,6 +9,7 @@ import diary from '@/assets/img/diary.png'
 import end from '@/assets/img/end.png'
 import keyissue from '@/assets/img/keyissue.png'
 import point from '@/assets/img/point.png'
+import Loading from '../common/loading/loading.jsx'
 import ListHeader from '@/views/common/listHeader/listHeader.jsx'
 import ContentList from './commonents/contentList.jsx'
 import axios from 'axios'
@@ -44,6 +45,7 @@ export default class projectDetail extends React.Component {
           item.src = type[index]
           item.mytype = name[index]
         })
+        console.log(show);
          this.setState({
           show:true,
           pageList:show,
@@ -69,7 +71,7 @@ export default class projectDetail extends React.Component {
                           ))
                         }
                       </div>
-                    : ''
+                    : <Loading size='36'/>
                   }
               </main>
           </div>

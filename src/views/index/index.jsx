@@ -4,9 +4,11 @@
 import React from 'react';
 import './index.less';
 import Footer from '../common/footer/footer.jsx'
+import Loading from '../common/loading/loading.jsx'
 import Banner from './components/banner/banner.jsx'
 import Projects from './components/projects/projects.jsx';
 import Articles from './components/articles/articles.jsx';
+
 import axios from 'axios';
 export default class Index extends React.Component{
   constructor(props){
@@ -29,16 +31,17 @@ export default class Index extends React.Component{
   render(){
     return (
       <div className="index">
-            <Banner />
-      {
-        this.state.show ? 
-            <div>
-              <Projects />
-              <Articles titleShown articlList = {this.state.articlList}/>
-              <Footer/>
-            </div>
-        : ''
-      }
+            <Banner/>
+              {
+                this.state.show ? 
+                    <div>
+                      <Projects />
+                      <Articles titleShown articlList = {this.state.articlList}/>
+                      <Footer/>
+                    </div>
+                : <Loading size='36'/>
+              }
+            
       </div>
     )
   }

@@ -4,6 +4,7 @@
 import React from 'react';
 import './teamDetail.less'
 import MemberHeader from './components/memberHeader.jsx'
+import Loading from '../common/loading/loading.jsx'
 import TeamDetailExperence from './components/teamDetailExperence.jsx'
 import TeamDetailInformation from './components/teamDetailInformation.jsx'
 import axios from 'axios'
@@ -42,6 +43,7 @@ export default class teamDetail extends React.Component{
         else{
           res.data.skill = []; 
         }
+        console.log(res.data.skill);
         this.setState({
           information:res.data, //获取所有
           finsh:true,
@@ -61,7 +63,7 @@ export default class teamDetail extends React.Component{
                     <TeamDetailExperence experence = {this.state.information.experience}/>
                 </div>
               </div>
-            : ''
+            : <Loading size='36'/>
           }
           </main>
       </div>
