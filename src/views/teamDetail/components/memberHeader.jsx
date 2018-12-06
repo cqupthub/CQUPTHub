@@ -1,9 +1,7 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowLeft,faArrowRight}  from '@fortawesome/fontawesome-free-solid'
 export default class MemberHeader extends React.Component{
   constructor(props){
-    super(props);
+    super(props)
   }
   back(){
     history.back()
@@ -11,7 +9,9 @@ export default class MemberHeader extends React.Component{
   render(){
     return (
         <header className ='member-box'>
-            <span style={{cursor:'pointer'}}><FontAwesomeIcon  onClick = {this.back.bind(this)} icon = {faArrowLeft} style={{fontSize:30,color:'green',}} /></span>  
+            <span style={{cursor:'pointer'}} onClick = {this.back.bind(this)}>
+                <img className = 'leftarrow' src={require('../../../assets/img/icon/zuojian.png')}/>            
+            </span>  
             <span className='member-name'>{this.props.name}</span>
         </header>
     )

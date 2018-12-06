@@ -1,20 +1,21 @@
-/**
- * 
- */
-
 const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
+  externals:{
+    'react':'React',
+    'react-dom':'ReactDOM',
+    'react-router':'ReactRouter',
+    'antd':'antd',
+    'axios':'axios',
+  },
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'static/js/bundle.js',
   },
-  devtool:false,
   resolve: {
     alias: {
       '@': path.resolve(__dirname,'src'),
@@ -31,6 +32,10 @@ module.exports = {
             presets: ['env', 'react']
           }
         }
+      },
+      {
+        test: /\.tsx?$/,
+        loader: ['babel-loader','ts-loader'],
       },
       {
         test: /\.m?jsx$/,
@@ -72,7 +77,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    // new CleanWebpackPlugin(['dist']),
     new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html'
@@ -84,7 +89,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'commons',
       filename: 'static/js/base.js'
-    })
+    }),
   ],
   devServer: {
     contentBase: './dist'

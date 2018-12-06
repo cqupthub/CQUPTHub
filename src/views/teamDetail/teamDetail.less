@@ -1,4 +1,11 @@
 #teamDetail{
+	  .leftarrow{
+	  	width:20px;
+	  }
+	  .rightarrow{
+	  	width:20px;
+	  	transform: rotate(180deg);
+	  }
 	  .loadingwrapper{
 	    position:relative;
 	  }
@@ -71,12 +78,17 @@
 					.member-skill-detail{
 						margin-top:10px;
 						.skill-list{
+							display: flex;
+							align-items: center;
+							margin:2px 0;
 							.skill-icon{
 								font-size: 20px;
 								color:green;
 							}
 							.skill-detail{
 								margin-left:10px;
+								line-height:20px;
+								word-break: break-all;
 							}
 						}
 					}

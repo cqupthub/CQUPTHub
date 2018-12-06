@@ -1,7 +1,5 @@
 import React from 'react'
 import { Spin, Icon } from 'antd';
-
-
 export default class Loading extends React.Component{
   constructor(props){
     super(props);

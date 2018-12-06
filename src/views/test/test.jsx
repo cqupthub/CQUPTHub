@@ -3,6 +3,8 @@
   */
 import React from 'react'
 import {Button} from 'antd'
+
+console.log(Button);
 export default class Test extends React.Component {
   constructor(props){
     super(props);
@@ -11,7 +13,7 @@ export default class Test extends React.Component {
   render() {
     return (
       <div className="about">
-           <Button>test</Button>
+          <Button></Button>
       </div>
     )
   }

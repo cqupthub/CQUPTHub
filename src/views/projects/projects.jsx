@@ -7,7 +7,6 @@ import { Link } from 'react-router'
 import { Pagination } from 'antd';
 import Loading from '../common/loading/loading.jsx'
 import './project.less';
-import bg from '@/assets/img/bg_project.png'
 import ProjectList from './commonents/list.jsx'
 import Footer from '../common/footer/footer.jsx'
 import ListHeader from '@/views/common/listHeader/listHeader.jsx'
@@ -60,8 +59,6 @@ export default class Projects extends React.Component{
   render(){
     return (
       <div className="projects" id='projects'>
-          <div className='banner' style={{backgroundImage: `url(${bg})`}}>
-          </div>
           <div className = 'main-box'>
             {
               this.state.show == 2?

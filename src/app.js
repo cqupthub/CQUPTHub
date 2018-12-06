@@ -12,8 +12,6 @@ import teamDetail from './views/teamDetail/teamDetail.jsx'
 import article from './views/article/article.jsx'
 import aboutUs from './views/aboutUs/about.jsx'
 import pageDetail from './views/pageDetail/pageDetail.jsx'
-
-
 ReactDOM.render(
   <Router history={ hashHistory }>
     <Route path="/" component={App}>

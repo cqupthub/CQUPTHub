@@ -2,7 +2,7 @@
  * 团队介绍
  */
 import React from 'react'
-import bg from '@/assets/img/bg_project.png'
+// import bg from '@/assets/img/bg_project.png'
 import logo from '@/assets/img/logo.png';
 import { Link } from 'react-router'
 import ListHeader from '@/views/common/listHeader/listHeader.jsx'
@@ -11,7 +11,7 @@ import Footer from '../common/footer/footer.jsx'
 import Loading from '../common/loading/loading.jsx'
 import TeamCaption from './components/teamCaption.jsx'
 import axios from 'axios'
-import { Pagination } from 'antd';
+import { Pagination } from 'antd'
 import './team.less';
 export default class Team extends React.Component {
   constructor(props){
@@ -56,8 +56,6 @@ export default class Team extends React.Component {
   render() {
     return (
       <div className="Team" id='Team'>
-          <div className='banner' style={{backgroundImage: `url(${bg})`}}>
-          </div>
           {
             this.state.show == 2?
               <main className='main-box'>

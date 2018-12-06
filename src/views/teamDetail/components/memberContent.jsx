@@ -1,6 +1,4 @@
 import React from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowLeft,faArrowRight}  from '@fortawesome/fontawesome-free-solid'
 export default class memberContent extends React.Component{
   constructor(props){
     super(props);
@@ -18,7 +16,7 @@ export default class memberContent extends React.Component{
                   {
                     this.props.information.skill.map((item,index)=>(
                       <li className ='skill-list' key = {index}>
-                        <FontAwesomeIcon icon = {faArrowRight} className ='skill-icon' />
+                        <img className = 'rightarrow' src={require('../../../assets/img/icon/zuojian.png')}/>
                         <span className = 'skill-detail'>{item}</span>
                       </li>
                     ))

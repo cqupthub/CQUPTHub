@@ -1,6 +1,5 @@
 import React from 'react'
 import ArticleList from './components/articlelist/articlelist.jsx';
-import Banner from '../index/components/banner/banner.jsx';
 import ArticleDetails from './components/articledetails/articledetails.jsx';
 import { Pagination } from 'antd';
 import Footer from '../common/footer/footer.jsx'
@@ -75,7 +74,6 @@ export default class Article extends React.Component {
     return (
       <div>
               <div className="Article">
-                <Banner />
                 {
                   this.state.show  == 2 ?
                     <div className='myBox'>
