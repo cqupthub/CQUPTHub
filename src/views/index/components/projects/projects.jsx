@@ -5,14 +5,17 @@ const projectsInfo = [
   {
     name: '区块链征信系统联盟链',
     description: '项目1',
+    src:'http://119.23.233.196:1234/usr/hubweb_qiantai/app/templates/static/img/3.jpg'
   },
   {
     name: '互联网检测与取证技术',
     description: '项目2',
+    src:'http://119.23.233.196:1234/usr/hubweb_qiantai/app/templates/static/img/1.jpg'
   },
   {
     name: '区块链保全系统私链',
     description: '项目3',
+    src:'http://119.23.233.196:1234/usr/hubweb_qiantai/app/templates/static/img/5.jpg'
   },
 ]
 
@@ -30,6 +33,7 @@ class Projects extends Component {
             <div key={i} className="pros-bd-item">
                <Link to={{pathname:'/projectDetail',query:{projectid:i + 1} }}>
                   <div className="pros-bd-item-img">
+                      <img alt=''  src={val.src}/>
                   </div>
                   <div className="pros-bd-item-text">
                     <div className="pros-bd-item-t-title">{val.name}</div>

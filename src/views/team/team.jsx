@@ -2,7 +2,6 @@
  * 团队介绍
  */
 import React from 'react'
-// import bg from '@/assets/img/bg_project.png'
 import logo from '@/assets/img/logo.png';
 import { Link } from 'react-router'
 import ListHeader from '@/views/common/listHeader/listHeader.jsx'
