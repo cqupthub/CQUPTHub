@@ -1,2 +1,2 @@
 # CQUPTHub
-website for CQUPTHub in CQUPT
+website for CQUPTHub
